@@ -1,0 +1,6 @@
+*.log
+*~
+hi-*
+lib
+bin
+*.swp

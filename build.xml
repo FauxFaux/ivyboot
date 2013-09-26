@@ -1,0 +1,20 @@
+<project xmlns:ivy="antlib:org.apache.ivy.ant" name="ivy" default="run">
+    <path id="lib.path.id">
+        <fileset dir="lib" />
+    </path>
+
+    <path id="run.path.id">
+        <path refid="lib.path.id" />
+        <path location="bin" />
+    </path>
+
+    <target name="resolve" description="--> retrieve dependencies with ivy">
+        <ivy:retrieve />
+    </target>
+    <!--resolve-->
+    <target name="run" depends="" description="--> compile and run the project">
+        <mkdir dir="bin" />
+        <javac srcdir="src" destdir="bin" classpathref="lib.path.id" includeAntRuntime="false"/>
+        <java fork="true" classpathref="run.path.id" classname="com.goeswhere.Main"/>
+    </target>
+</project>

@@ -4,3 +4,5 @@ hi-*
 lib
 bin
 *.swp
+.idea
+*.iml
